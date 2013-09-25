@@ -8,11 +8,11 @@ global
 <% end -%>
 
 defaults
-    timeout connect
+    timeout connect     <%= node['haproxy']['default_timeouts']['connect'] %>
     timeout queue       5s
-    timeout server      30s
+    timeout server      <%= node['haproxy']['default_timeouts']['server'] %>
     timeout tunnel      1h
-    timeout client      5s
+    timeout client      <%= node['haproxy']['default_timeouts']['client'] %>
     balance             <%= node['haproxy']['balance_algorithm'] %>
 
 frontend www
