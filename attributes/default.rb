@@ -38,6 +38,12 @@ default['haproxy']['member_max_connections'] = 100
 default['haproxy']['frontend_max_connections'] = 2000
 default['haproxy']['frontend_ssl_max_connections'] = 2000
 
+default['haproxy']['frontend_www_address'] = 0.0.0.0
+default['haproxy']['frontend_www_port'] = 80
+default['haproxy']['frontend_wwws_address'] = 0.0.0.0
+default['haproxy']['frontend_wwws_port'] = 443
+default['haproxy']['frontend_wwws_cert'] = '/usr/local/etc/server.pem'
+
 default['haproxy']['install_method'] = 'package'
 default['haproxy']['conf_dir'] = '/etc/haproxy'
 
