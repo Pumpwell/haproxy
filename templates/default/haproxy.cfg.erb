@@ -22,7 +22,7 @@ frontend www
     redirect            scheme https if !{ ssl_fc }
 
 frontend wwws
-    bind                <%= node['haproxy']['frontend_wwws_address'] %>:<%= node['haproxy']['frontend_wwws_port'] %> ssl crt <%= node['haproxy']['frontend_wwws_cert'] %>
+    bind                <%= node['haproxy']['frontend_wwws_address'] %>:<%= node['haproxy']['frontend_wwws_port'] %> ssl crt <%= node['haproxy']['frontend_wwws_cert'] %> ca-file <%= node['haproxy']['frontend_wwws_ca_file'] %>
     timeout client      1h
     default_backend     www_backend
 
